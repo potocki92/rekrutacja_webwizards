@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap");
+/* 
+=====================================
+=====================================
+            IMPORT SASS
+=====================================
+=====================================
+*/
+/* IMPORT GENERAL
+============================================= */
+/* GENERAL 
+============================================= */
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* GENERAL ITEM CLASS TO ALL LI
+============================================= */
+li {
+  list-style: none;
+}
+
+/* CONTAINER (CENTERING AND WIDTH)
+============================================= */
+.container {
+  max-width: 1920px;
+  margin: 0 140px;
+}
+
+.section {
+  padding: 233.5px 0;
+}
+
+/* IMPORT SECTIONS
+============================================= */
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+.header__burger {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.nav__list {
+  display: flex;
+  gap: 20px;
+}
+.nav__social {
+  display: flex;
+}
+
+/* HERO */
+.hero {
+  height: 813px;
+  background-image: url("/rekrutacja_webwizards/hero.1cd3deb0.png");
+  background-size: cover;
+  background-position: center;
+  border-top: 4px #FF4359 solid;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .hero {
+    background-image: url("/rekrutacja_webwizards/hero@2x.01c2e59d.png");
+  }
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+}
+.about__image {
+  min-width: 1090px;
+  height: 613px;
+  background-image: url("/rekrutacja_webwizards/about.934542e5.png");
+  background-size: cover;
+  background-position: bottom;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  .about__image {
+    background-image: url("/rekrutacja_webwizards/about@2x.755391af.png");
+  }
+}
+.about__wrapper {
+  padding: 0 154px;
+}
+.about__heading {
+  text-align: left;
+  font: normal normal 900 48px/57px Montserrat;
+  letter-spacing: 19.2px;
+  color: #000000;
+  opacity: 1;
+}
+.about__paragraph {
+  text-align: left;
+  font: normal normal 300 16px/24px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+}
+
+/* GALLERIES */
+/* CONTACT */
+/* FOOTER */
+
+/*# sourceMappingURL=/rekrutacja_webwizards/src.3195995c.css.map */
