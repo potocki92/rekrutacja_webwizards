@@ -32,15 +32,42 @@ li {
 /* HEADER */
 .header {
   display: flex;
+  align-items: center;
+  height: 100px;
 }
-.header__list {
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.nav__list {
+  display: flex;
+  gap: 20px;
+}
+.nav__social {
   display: flex;
 }
 
 /* HERO */
+.hero {
+  height: 813px;
+  position: relative;
+  overflow: hidden;
+}
+.hero__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 /* ABOUT */
 /* GALLERIES */
 /* CONTACT */
 /* FOOTER */
 
-/*# sourceMappingURL=/rekrutacja_webwizards/src.89259707.css.map */
+/*# sourceMappingURL=/rekrutacja_webwizards/src.8fc9d3e0.css.map */
