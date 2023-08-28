@@ -1,0 +1,37 @@
+.about {
+
+    display: flex;
+
+    &__image {
+        min-width: 1090px;
+        height: 613px;
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+        background-image: url('../assets/images/retina/about@2x.png');
+        }
+        background-image: url('../assets/images/global/about.png');
+        background-size: cover;
+        background-position: bottom;
+    }
+
+    &__wrapper {
+        padding: 0 154px;
+    }
+    &__heading {
+        text-align: left;
+        font: normal normal 900 48px/57px Montserrat;
+        letter-spacing: 19.2px;
+        color: #000000;
+        opacity: 1;
+    }
+    &__paragraph {
+        text-align: left;
+        font: normal normal 300 16px/24px Montserrat;
+        letter-spacing: 0px;
+        color: #000000;
+    }
+}
