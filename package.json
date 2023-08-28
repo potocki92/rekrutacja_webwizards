@@ -3,8 +3,8 @@
   "homepage": "https://github.com/potocki92/rekrutacja_webwizards",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "parcel build src/*.html --public-url /rekrutacja_webwizards/",
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /rekrutacja_webwizards/ --no-minify",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
