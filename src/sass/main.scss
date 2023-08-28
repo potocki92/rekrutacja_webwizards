@@ -1,0 +1,34 @@
+/* 
+=====================================
+=====================================
+            IMPORT SASS
+=====================================
+=====================================
+*/
+
+/* IMPORT GENERAL
+============================================= */
+@import './general';
+
+
+/* IMPORT SECTIONS
+============================================= */
+
+
+/* HEADER */
+@import './components/header';
+
+/* HERO */
+@import './components/hero';
+
+/* ABOUT */
+@import './components/about';
+
+/* GALLERIES */
+@import './components/galleries';
+
+/* CONTACT */
+@import './components/contact';
+
+/* FOOTER */
+@import './components/footer';

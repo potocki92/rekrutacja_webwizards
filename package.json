@@ -1,0 +1,22 @@
+{
+  "name": "logoipsum",
+  "homepage": "https://github.com/potocki92/rekrutacja_webwizards",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/*.html --public-url /rekrutacja_webwizards/",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "gh-pages": "^6.0.0",
+    "parcel": "^2.9.3",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "posthtml-include": "^1.7.4",
+    "sass": "^1.66.1"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.3"
+  }
+}
