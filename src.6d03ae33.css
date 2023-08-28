@@ -1,0 +1,32 @@
+/* 
+=====================================
+=====================================
+            IMPORT SASS
+=====================================
+=====================================
+*/
+/* IMPORT GENERAL
+============================================= */
+/* GENERAL ITEM CLASS TO ALL LI
+============================================= */
+.item {
+  list-style: none;
+}
+
+/* CONTAINER (CENTERING AND WIDTH)
+============================================= */
+.container {
+  max-width: 1920px;
+  margin: 0 140px;
+}
+
+/* IMPORT SECTIONS
+============================================= */
+/* HEADER */
+/* HERO */
+/* ABOUT */
+/* GALLERIES */
+/* CONTACT */
+/* FOOTER */
+
+/*# sourceMappingURL=/rekrutacja_webwizards/src.6d03ae33.css.map */
