@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap");
+/* 
+=====================================
+=====================================
+            IMPORT SASS
+=====================================
+=====================================
+*/
+/* IMPORT GENERAL
+============================================= */
+/* GENERAL 
+============================================= */
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* GENERAL ITEM CLASS TO ALL LI
+============================================= */
+li {
+  list-style: none;
+}
+
+/* CONTAINER (CENTERING AND WIDTH)
+============================================= */
+.container {
+  max-width: 1920px;
+  margin: 0 140px;
+}
+
+/* IMPORT SECTIONS
+============================================= */
+/* HEADER */
+.header {
+  display: flex;
+}
+.header__list {
+  display: flex;
+}
+
+/* HERO */
+/* ABOUT */
+/* GALLERIES */
+/* CONTACT */
+/* FOOTER */
+
+/*# sourceMappingURL=/rekrutacja_webwizards/src.89259707.css.map */
