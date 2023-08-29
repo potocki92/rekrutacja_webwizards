@@ -1,22 +1,64 @@
+/* RESET
+============================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+a,
+p,
+span,
+figure {
+  margin: 0;
+  padding: 0;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  list-style-type: none;
+  text-decoration: none;
+  user-select: none;
+}
+
 /* GENERAL 
 ============================================= */
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* GENERAL ITEM CLASS TO ALL LI
 ============================================= */
 li {
-    list-style: none;
-  }
-  
+  list-style: none;
+}
+
 /* CONTAINER (CENTERING AND WIDTH)
 ============================================= */
 .container {
-    max-width: 1920px;
-    margin: 0 140px;
+  max-width: 1920px;
+  margin: 0 140px;
 }
 
 .section {
-  padding: 233.5px 0;
+  &.about {
+    padding: 233.5px 0;
+  }
+
+  &.galleries {
+    padding: 51px 0 75px 0;
+  }
+}
+.heading {
+  text-align: left;
+  font: normal normal 900 48px/57px Montserrat;
+  letter-spacing: 19.2px;
+  color: #000000;
+  opacity: 1;
+  padding: 0 0 29px 0;
+  @include coloredBorderBottom("red", 2px);
 }

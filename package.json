@@ -1,10 +1,9 @@
 {
   "name": "logoipsum",
   "homepage": "https://github.com/potocki92/rekrutacja_webwizards",
-  "main": "index.js",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /rekrutacja_webwizards/ --no-minify",
+    "start": "parcel serve src/*.html",
+    "build": "rmdir /s /q dist && parcel build src/*.html --public-url /rekrutacja_webwizards/",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

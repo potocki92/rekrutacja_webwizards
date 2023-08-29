@@ -1,15 +1,16 @@
 .hero {
-    height: 813px;
-    @media only screen and (-webkit-min-device-pixel-ratio: 2),
-       only screen and (min--moz-device-pixel-ratio: 2),
-       only screen and (-o-min-device-pixel-ratio: 2/1),
-       only screen and (min-device-pixel-ratio: 2),
-       only screen and (min-resolution: 192dpi),
-       only screen and (min-resolution: 2dppx) {
-        background-image: url('../assets/images/retina/hero@2x.png');
-        }
-        background-image: url('../assets/images/global/hero.png');
-        background-size: cover;
-        background-position: center;
-    border-top: 4px #FF4359 solid;
+  height: 813px;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    background-image: url("../assets/images/retina/hero@2x.png");
+  }
+  background-image: url("../assets/images/global/hero.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

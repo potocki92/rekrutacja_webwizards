@@ -1,0 +1,138 @@
+.galleries {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__heading {
+    margin-bottom: 70.5px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1364px;
+    position: relative;
+  }
+
+  &__images {
+    width: 1364px;
+    display: -webkit-inline-box; /* Dla przeglądarek WebKit */
+    // @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    //   only screen and (min--moz-device-pixel-ratio: 2),
+    //   only screen and (-o-min-device-pixel-ratio: 2/1),
+    //   only screen and (min-device-pixel-ratio: 2),
+    //   only screen and (min-resolution: 192dpi),
+    //   only screen and (min-resolution: 2dppx) {
+    //   background-image: url("../assets/images/retina/galleries-1@2x.png");
+    // }
+    // background-image: url("../assets/images/global/galleries-1.png");
+    // background-size: cover;
+    // background-position: bottom;
+
+    & .image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__circles {
+    padding-top: 30px;
+  }
+}
+
+.slider {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 767px;
+  max-width: 1364px;
+  margin: 10px;
+  overflow: hidden;
+}
+
+.slider__slides {
+  width: 100%;
+  padding-top: 66%;
+}
+
+.slider__slide {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  font-weight: bold;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  opacity: 0;
+}
+
+.slider__slide.active {
+  opacity: 1;
+}
+
+.slider__slide img {
+  width: 100%;
+}
+
+.slider__nav-button {
+  position: absolute;
+  opacity: 0.8;
+  cursor: pointer;
+  color: map-get($map: $color, $key: "gray");
+
+  &.active {
+    color: map-get($map: $color, $key: "red");
+  }
+}
+
+#nav-button--prev {
+  position: absolute;
+  left: -45px;
+}
+
+#nav-button--next {
+  position: absolute;
+  right: -45px;
+  transform: rotate(180deg);
+}
+
+.slider__nav {
+  position: absolute;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.slider__navlink {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background-color: map-get($map: $color, $key: "gray");
+  opacity: 1;
+  margin: 0 10px 0 10px;
+  cursor: pointer;
+}
+
+.slider__navlink.active {
+  height: 24px;
+  width: 24px;
+  background-color: map-get($map: $color, $key: "red");
+}
+
+@media screen and (max-width: 640px) {
+  .slider__nav-button {
+    height: 40px;
+    width: 40px;
+  }
+  .slider__navlink {
+    height: 12px;
+    width: 12px;
+  }
+}

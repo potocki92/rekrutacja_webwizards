@@ -1,0 +1,5 @@
+/* Function to generate colored border bottom with variable size */
+@mixin coloredBorderBottom($key, $borderSize: 1px) {
+  $colorValue: map-get($color, $key);
+  border-bottom: $borderSize solid $colorValue;
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700;900&display=swap");
 /* 
 =====================================
 =====================================
@@ -9,27 +9,25 @@
 
 /* IMPORT GENERAL
 ============================================= */
-@import './general';
-
-
+@import "./utils/var";
+@import "./utils/mixin";
+@import "./general";
 /* IMPORT SECTIONS
 ============================================= */
-
-
 /* HEADER */
-@import './components/header';
+@import "./components/header";
 
 /* HERO */
-@import './components/hero';
+@import "./components/hero";
 
 /* ABOUT */
-@import './components/about';
+@import "./components/about";
 
 /* GALLERIES */
-@import './components/galleries';
+@import "./components/galleries";
 
 /* CONTACT */
-@import './components/contact';
+@import "./components/contact";
 
 /* FOOTER */
-@import './components/footer';
+@import "./components/footer";
