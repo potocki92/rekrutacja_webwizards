@@ -1,5 +1,5 @@
-<header class="header">
-  <div class="header__wrapper container">
+<header id="header" class="header">
+  <div class="container header__wrapper ">
     <div class="header__logo">
       <svg width="216px" height="50px">
         <use href="./assets/svg/icons.svg#logo"></use>
@@ -7,9 +7,9 @@
     </div>
     <nav class="nav">
       <ul class="nav__list">
-        <li><a class="nav__link">START</a></li>
-        <li><a class="nav__link">O MNIE</a></li>
-        <li><a class="nav__link">GALERIA</a></li>
+        <li><a class="nav__link" href="#hero">START</a></li>
+        <li><a class="nav__link" href="#about">O MNIE</a></li>
+        <li><a class="nav__link" href="#galleries">GALERIA</a></li>
         <li><a class="nav__link">KONTAKT</a></li>
       </ul>
       <ul class="nav__social">
@@ -36,9 +36,11 @@
         </li>
       </ul>
     </nav>
-    <div class="header__burger"></div>
-    <span></span>
-    <span></span>
-    <span></span>
+    <div id="menu-toggle" class="header__burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    
   </div>
 </header>

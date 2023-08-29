@@ -25,6 +25,12 @@ figure {
   user-select: none;
 }
 
+/* SMOOTH SCROLL
+============================================= */
+
+html {
+  scroll-behavior: smooth;
+}
 /* GENERAL 
 ============================================= */
 * {
@@ -41,7 +47,14 @@ li {
 ============================================= */
 .container {
   max-width: 1920px;
-  margin: 0 140px;
+  margin: 0 40px;
+  
+  &.header__wrapper {
+    @media screen and (min-width: 1300px){
+      
+      margin: 0 140px;
+    }
+  }
 }
 
 .section {
@@ -55,10 +68,16 @@ li {
 }
 .heading {
   text-align: left;
-  font: normal normal 900 48px/57px Montserrat;
+
+  font: normal normal 900 30px/57px Montserrat;
   letter-spacing: 19.2px;
   color: #000000;
   opacity: 1;
   padding: 0 0 29px 0;
   @include coloredBorderBottom("red", 2px);
+  
+  @media screen and (min-width: 1040px) {
+    
+    font: normal normal 900 48px/57px Montserrat;
+  }
 }

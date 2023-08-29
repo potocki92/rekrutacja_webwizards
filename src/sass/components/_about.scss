@@ -2,10 +2,15 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  gap: 74px;
+  @media screen and (min-width: 1151px) {
+    gap: 0;
+  }
 
   &__image {
-    width: 56.77%;
     height: 613px;
+    width: 100%
+    ;
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
       only screen and (min--moz-device-pixel-ratio: 2),
       only screen and (-o-min-device-pixel-ratio: 2/1),
@@ -17,19 +22,29 @@
     background-image: url("../assets/images/global/about.png");
     background-size: cover;
     background-position: bottom;
+
+    @media screen and (min-width: 1151px) {
+      width: 56.77%;
+    }
   }
 
   &__wrapper {
-    padding: 0 140px;
-    width: 42.41%;
     display: flex;
     flex-direction: column;
     gap: 45px;
+    padding: 0 40px;
+    
+    @media screen and (min-width: 1151px) {
+      width: 42.41%;
+    }
+    @media screen and (min-width: 1920px){
+      padding: 0 140px; 
+    }
   }
 
   &__paragraph {
     text-align: left;
-    font: normal normal 300 16px/24px Montserrat;
+    font: normal normal 300 14px/22px Montserrat;
     letter-spacing: 0px;
     color: #000000;
     margin-bottom: 1em;
@@ -38,6 +53,10 @@
       content: " "; /* Dodawanie odstępu jako treść znacznika br */
       display: block; /* Konwertowanie na blok, aby dodać odstęp */
       margin-top: 1.5em; /* Dodawanie odstępu nad znacznikiem br */
+    }
+
+    @media screen and (min-width: 1920px){
+      font: normal normal 300 16px/24px Montserrat;
     }
   }
 }
