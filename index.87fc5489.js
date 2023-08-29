@@ -605,7 +605,7 @@ const markup = (e)=>`
   <img class="slide" srcset="${e.image} 1x, ${e.retina}" alt=${e.alt}/>
 `;
 const items = array.map((e, index)=>markup(e, index)).join("");
-wrapper.innerHTML = items;
+wrapper.innerHTML += items;
 document.querySelectorAll(".slider__navlink").forEach(()=>{
     let currentSlide = 0;
     const slides = document.querySelectorAll(".slide");

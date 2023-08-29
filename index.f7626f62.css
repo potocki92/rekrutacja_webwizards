@@ -398,6 +398,13 @@ li {
   position: relative;
 }
 
+.slider__buttons {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 50%);
+}
+
 .slider__slide {
   opacity: 0;
   object-fit: cover;
