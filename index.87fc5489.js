@@ -578,9 +578,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _images = require("./images");
 var _imagesDefault = parcelHelpers.interopDefault(_images);
 const wrapper = document.querySelector(".slider__slides");
-let slides = document.getElementsByClassName("slider__slide");
 let navlinks = document.getElementsByClassName("slider__navlink");
-let currentSlide = 0;
 const array = [
     {
         "alt": "House",
@@ -603,32 +601,36 @@ const array = [
         "retina": (0, _imagesDefault.default).image4_retina
     }
 ];
-const markup = (e, index)=>`
-  <div class="slider__slide ${index === 0 ? "active" : ""}">
-    <img srcset="${e.image} 1x, ${e.retina}" alt=${e.alt}/>
-  </div>
+const markup = (e)=>`
+  <img class="slide" srcset="${e.image} 1x, ${e.retina}" alt=${e.alt}/>
 `;
 const items = array.map((e, index)=>markup(e, index)).join("");
 wrapper.innerHTML = items;
-document.getElementById("nav-button--next").addEventListener("click", ()=>{
-    changeSlide(currentSlide + 1);
-});
-document.getElementById("nav-button--prev").addEventListener("click", ()=>{
-    changeSlide(currentSlide - 1);
-});
-function changeSlide(moveTo) {
-    if (moveTo >= slides.length) moveTo = 0;
-    if (moveTo < 0) moveTo = slides.length - 1;
-    slides[currentSlide].classList.toggle("active");
-    navlinks[currentSlide].classList.toggle("active");
-    slides[moveTo].classList.toggle("active");
-    navlinks[moveTo].classList.toggle("active");
-    currentSlide = moveTo;
-}
-document.querySelectorAll(".slider__navlink").forEach((bullet, bulletIndex)=>{
-    bullet.addEventListener("click", ()=>{
-        if (currentSlide !== bulletIndex) changeSlide(bulletIndex);
+document.querySelectorAll(".slider__navlink").forEach(()=>{
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach((slide, index)=>{
+        slide.style.left = `calc(${index * 100}% + ${index * 100}px)`;
     });
+    const goPrev = ()=>{
+        currentSlide--;
+        sliderImage();
+    };
+    const goNext = ()=>{
+        currentSlide++;
+        sliderImage();
+    };
+    document.getElementById("nav-button--prev").addEventListener("click", ()=>{
+        goPrev();
+    });
+    document.getElementById("nav-button--next").addEventListener("click", ()=>{
+        goNext();
+    });
+    const sliderImage = ()=>{
+        slides.forEach((slide)=>{
+            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
+        });
+    };
 });
 
 },{"./images":"4XIGb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4XIGb":[function(require,module,exports) {
