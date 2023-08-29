@@ -3,7 +3,7 @@
   "homepage": "https://github.com/potocki92/rekrutacja_webwizards",
   "scripts": {
     "start": "parcel serve src/*.html",
-    "build": "rmdir /s /q dist && parcel build src/*.html --public-url /rekrutacja_webwizards/",
+    "build": "parcel build src/*.html --public-url /rekrutacja_webwizards/",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
