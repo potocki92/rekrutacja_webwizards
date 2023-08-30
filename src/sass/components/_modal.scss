@@ -1,5 +1,18 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  &.is-hidden {
+    visibility: hidden;
+  }
+}
+
 .modal {
-  width: 536px;
+  z-index: 1;
+  width: 90%;
+  max-width: 536px;
   height: 545px;
   background: #ffffff 0% 0% no-repeat padding-box;
   box-shadow: 0px 0px 99px #ff4359;
@@ -11,9 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &.is-hidden {
-    visibility: hidden;
-  }
+ 
 
   &__close {
     position: absolute;
@@ -55,6 +66,7 @@
   &__span {
     color: map-get($map: $color, $key: "red");
     &--under {
+      visibility: hidden;
       text-align: center;
       font: normal normal 300 12px/14px Montserrat;
       letter-spacing: 0px;
