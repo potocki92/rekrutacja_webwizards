@@ -1,5 +1,4 @@
-/* RESET
-============================================= */
+/* RESET */
 h1,
 h2,
 h3,
@@ -23,28 +22,20 @@ figure {
   list-style-type: none;
   text-decoration: none;
   user-select: none;
+  list-style: none;
 }
 
-/* SMOOTH SCROLL
-============================================= */
+/* SMOOTH SCROLL */
 
 html {
   scroll-behavior: smooth;
 }
-/* GENERAL 
-============================================= */
+/* GENERAL */
 * {
   font-family: "Montserrat", sans-serif;
 }
 
-/* GENERAL ITEM CLASS TO ALL LI
-============================================= */
-li {
-  list-style: none;
-}
-
-/* CONTAINER (CENTERING AND WIDTH)
-============================================= */
+/* CONTAINER (Centrowanie i szerokość) */
 .container {
   max-width: 1920px;
   margin: 0 40px;

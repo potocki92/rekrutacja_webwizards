@@ -1,3 +1,4 @@
+/* Styl sekcji "Galleries" */
 .galleries {
   display: flex;
   flex-direction: column;
@@ -80,17 +81,21 @@
   }
 }
 
-#nav-button--prev {
+/* Style przycisków nawigacyjnych */
+#nav-button--prev,
+#nav-button--next {
   position: absolute;
+}
+#nav-button--prev {
   left: -45px;
 }
 
 #nav-button--next {
-  position: absolute;
   right: -45px;
   transform: rotate(180deg);
 }
 
+/* Styl slajdów */
 .slide {
   width: 100%;
   height: 100%;

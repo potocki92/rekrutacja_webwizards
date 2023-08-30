@@ -1,3 +1,4 @@
+/* Styl sekcji "About" */
 .about {
   width: 100%;
   display: flex;
@@ -7,10 +8,18 @@
     gap: 0;
   }
 
+  /* Styl obrazka w sekcji "About" */
   &__image {
     height: 613px;
-    width: 100%
-    ;
+    width: 100%;
+    /* Tło obrazka, wykorzystuje obrazy w różnych rozdzielczościach */
+    background-image: url("../assets/images/global/about.jpg");
+    background-size: cover;
+    background-position: bottom;
+
+
+
+    /* Dostarczenie obrazka wysokiej jakości na ekranach z wysokim DPI (retina) */
     @media only screen and (-webkit-min-device-pixel-ratio: 2),
       only screen and (min--moz-device-pixel-ratio: 2),
       only screen and (-o-min-device-pixel-ratio: 2/1),
@@ -19,21 +28,19 @@
       only screen and (min-resolution: 2dppx) {
       background-image: url("../assets/images/retina/about@2x.jpg");
     }
-    background-image: url("../assets/images/global/about.jpg");
-    background-size: cover;
-    background-position: bottom;
-
+    /* Szerokość obrazka na większych ekranach */
     @media screen and (min-width: 1151px) {
       width: 56.77%;
     }
   }
 
+  /* Styl kontenera tekstu w sekcji "About" */
   &__wrapper {
     display: flex;
     flex-direction: column;
     gap: 45px;
     padding: 0 40px;
-    
+    /* Szerokość kontenera tekstu na większych ekranach */
     @media screen and (min-width: 1151px) {
       width: 42.41%;
     }
@@ -42,6 +49,7 @@
     }
   }
 
+  /* Styl akapitu w sekcji "About" */
   &__paragraph {
     text-align: left;
     font: normal normal 300 14px/22px Montserrat;
@@ -49,12 +57,14 @@
     color: map-get($map: $color, $key: "black");
     margin-bottom: 1em;
 
-    br {
-      content: " "; /* Dodawanie odstępu jako treść znacznika br */
-      display: block; /* Konwertowanie na blok, aby dodać odstęp */
-      margin-top: 1.5em; /* Dodawanie odstępu nad znacznikiem br */
-    }
 
+    /* Stylowanie odstępów między wierszami */
+    br {
+      content: " "; 
+      display: block; 
+      margin-top: 1.5em; 
+    }
+    /* Dostosowanie czcionki na ekranach o bardzo wysokiej rozdzielczości */
     @media screen and (min-width: 1920px){
       font: normal normal 300 16px/24px Montserrat;
     }

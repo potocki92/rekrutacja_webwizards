@@ -1,4 +1,4 @@
-/* Function to generate colored border bottom with variable size */
+/* Funkcja generująca kolorową dolną ramkę o zmiennej szerokości */
 @mixin coloredBorderBottom($key, $borderSize: 1px) {
   $colorValue: map-get($color, $key);
   border-bottom: $borderSize solid $colorValue;
