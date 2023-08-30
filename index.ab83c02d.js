@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"9A9wB":[function(require,module,exports) {
+})({"ilc58":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "167346a9ffe3d548";
+module.bundle.HMR_BUNDLE_ID = "cb2ca7d1ab83c02d";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,27 +573,30 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"3C9CX":[function(require,module,exports) {
-(()=>{
-    const check = document.getElementById("check");
-    const checkSvg = document.getElementById("check__svg");
-    // open the mobile menu
-    const openButton = document.getElementById("contact");
-    const closeButton = document.getElementById("close");
-    // to add / remove class 'is-hidden'
-    const mobileMenu = document.querySelector(".modal");
-    // click and open mobile menu
-    openButton.addEventListener("click", toggleModal);
-    closeButton.addEventListener("click", toggleModal);
-    // function to add 'is-hidden' class to mobile
-    function toggleModal() {
-        mobileMenu.classList.toggle("is-hidden");
+},{}],"es6pb":[function(require,module,exports) {
+const form = document.querySelector(".modal__form");
+const submitButton = document.querySelector("#submitButton");
+const errorMessage = document.querySelector("#errorMessage");
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.querySelector("#name").value;
+    const surname = document.querySelector("#surname").value;
+    const email = document.querySelector("#email").value;
+    const checkbox = document.querySelector("#checkbox").checked;
+    if (!name || !surname || !email || !checkbox) errorMessage.style.visibility = "visible";
+    else {
+        errorMessage.style.visibility = "hidden";
+        const formData = {
+            name: name,
+            surname: surname,
+            email: email,
+            accept: checkbox
+        };
+        const encodedFormData = JSON.stringify(formData, null, 2);
+        console.log(encodedFormData);
     }
-    check.addEventListener("click", ()=>{
-        checkSvg.classList.toggle("check");
-    });
-})();
+});
 
-},{}]},["9A9wB","3C9CX"], "3C9CX", "parcelRequire3b0f")
+},{}]},["ilc58","es6pb"], "es6pb", "parcelRequire3b0f")
 
-//# sourceMappingURL=index.ffe3d548.js.map
+//# sourceMappingURL=index.ab83c02d.js.map

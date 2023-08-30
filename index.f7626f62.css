@@ -270,6 +270,12 @@ li {
   position: -webkit-sticky;
 }
 
+@media only screen and (-webkit-device-pixel-ratio >= 2), only screen and (-moz-device-pixel-ratio >= 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (resolution >= 192dpi), only screen and (resolution >= 2dppx) {
+  .hero {
+    background-image: url("hero@2x.26ca2a98.png");
+  }
+}
+
 @supports (-webkit-touch-callout: none) {
   .hero {
     background-image: url("hero@2x.26ca2a98.png");
@@ -457,12 +463,26 @@ li {
   height: 208px;
 }
 
+.backdrop {
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+}
+
 .modal {
+  z-index: 1;
   background: #fff no-repeat padding-box padding-box;
   border-radius: 33px;
   justify-content: center;
   align-items: center;
-  width: 536px;
+  width: 90%;
+  max-width: 536px;
   height: 545px;
   display: flex;
   position: fixed;
@@ -470,10 +490,6 @@ li {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 0 0 99px #ff4359;
-}
-
-.modal.is-hidden {
-  visibility: hidden;
 }
 
 .modal__close {
@@ -521,6 +537,7 @@ li {
 }
 
 .modal__span--under {
+  visibility: hidden;
   text-align: center;
   letter-spacing: 0;
   color: #ff4359;

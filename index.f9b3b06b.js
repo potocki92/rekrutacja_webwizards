@@ -575,6 +575,10 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"aHHgN":[function(require,module,exports) {
 (()=>{
+    const backdrop = document.getElementById("backdrop");
+    const header = document.getElementById("header");
+    const nav = document.querySelector(".nav");
+    const burger = document.getElementById("menu-toggle");
     const check = document.getElementById("check");
     const checkSvg = document.getElementById("check__svg");
     // open the mobile menu
@@ -587,7 +591,10 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     closeButton.addEventListener("click", toggleModal);
     // function to add 'is-hidden' class to mobile
     function toggleModal() {
-        mobileMenu.classList.toggle("is-hidden");
+        backdrop.classList.toggle("is-hidden");
+        burger.classList.remove("active");
+        header.classList.remove("show");
+        nav.classList.remove("show");
     }
     check.addEventListener("click", ()=>{
         checkSvg.classList.toggle("check");
