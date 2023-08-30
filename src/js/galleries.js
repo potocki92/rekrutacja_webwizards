@@ -48,19 +48,24 @@ let currentSlide = 0;
 // Ustawienie początkowej pozycji slajdów
 slides.forEach((slide, index) => {
   slide.style.left = `calc(${index * 100}% + ${index * 100}px)`;
+  if (index !== currentSlide) {
+    slide.style.opacity = 0.2; // Ustawienie opacity dla pierwszego slajdu
+  }
 });
 
 // Funkcja aktualizująca położenie slajdów
 const sliderImage = () => {
-  slides.forEach((slide) => {
+  slides.forEach((slide, index) => {
+    index === currentSlide ? slide.style.opacity = 1 : slide.style.opacity = 0.2; // Ustawiamy opacity dla slajdu
+    
     slide.style.transform = `translateX(calc(-${currentSlide * 100}% - ${
       currentSlide * 100
     }px))`;
-  });
+    });
 };
 
 // Funkcja przesuwająca na wybrany slajd
-const goSlide = (slideIndex) => {
+export const goSlide = (slideIndex) => {
   currentSlide = slideIndex;
   sliderImage();
 
@@ -90,7 +95,7 @@ nextButton.addEventListener("click", () => {
 });
 
 // Funkcja aktywująca odpowiednią nawigację
-const activeCircle = (slide) => {
+export const activeCircle = (slide) => {
   navlinks.forEach((link, index) => {
     index === slide
       ? link.classList.add("active")
@@ -105,4 +110,35 @@ navlinks.forEach((link, index) => {
     goSlide(currentSlide);
     activeCircle(index);
   });
+});
+
+// Dodajemy zmienną do przechowywania pozycji dotknięcia
+let touchStartX = 0;
+let touchEndX = 0;
+
+wrapper.addEventListener("touchstart", (event) => {
+  touchStartX = event.touches[0].clientX;
+});
+
+wrapper.addEventListener("touchmove", (event) => {
+  touchEndX = event.touches[0].clientX;
+});
+
+wrapper.addEventListener("touchend", () => {
+  const touchDistance = touchEndX - touchStartX;
+  const threshold = 50; // Minimalny dystans przesunięcia, aby uznać za przewinięcie
+
+  if (touchDistance > threshold) {
+    // Przesunięcie w prawo - idź do poprzedniego slajdu
+    if (currentSlide > 0) {
+      goSlide(currentSlide - 1);
+      activeCircle(currentSlide);
+    }
+  } else if (touchDistance < -threshold) {
+    // Przesunięcie w lewo - idź do następnego slajdu
+    if (currentSlide < slides.length - 1) {
+      goSlide(currentSlide + 1);
+      activeCircle(currentSlide);
+    }
+  }
 });
