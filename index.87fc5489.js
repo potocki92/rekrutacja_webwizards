@@ -620,10 +620,13 @@ let currentSlide = 0;
 // Ustawienie początkowej pozycji slajdów
 slides.forEach((slide, index)=>{
     slide.style.left = `calc(${index * 100}% + ${index * 100}px)`;
+    if (index !== currentSlide) slide.style.opacity = 0.2; // Ustawienie opacity dla pierwszego slajdu
 });
 // Funkcja aktualizująca położenie slajdów
 const sliderImage = ()=>{
-    slides.forEach((slide)=>{
+    slides.forEach((slide, index)=>{
+        if (index === currentSlide) slide.style.opacity = 1; // Ustawiamy opacity dla slajdu
+        else slide.style.opacity = 0.2;
         slide.style.transform = `translateX(calc(-${currentSlide * 100}% - ${currentSlide * 100}px))`;
     });
 };
