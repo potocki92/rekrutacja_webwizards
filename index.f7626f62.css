@@ -259,6 +259,8 @@ li {
 }
 
 .hero {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-image: url("hero.07119883.png");
   background-position: center;
   background-repeat: no-repeat;
