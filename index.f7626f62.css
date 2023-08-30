@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6, p, ul, li, a, p, span, figure {
   margin-inline: 0;
   padding-inline-start: 0;
   text-decoration: none;
-  list-style-type: none;
+  list-style: none;
 }
 
 html {
@@ -17,10 +17,6 @@ html {
 
 * {
   font-family: Montserrat, sans-serif;
-}
-
-li {
-  list-style: none;
 }
 
 .container {
@@ -153,7 +149,7 @@ li {
 }
 
 .header {
-  z-index: 1;
+  z-index: 2;
   background-color: #fff;
   border-bottom: 4px solid #ff4359;
   justify-content: center;
@@ -455,13 +451,15 @@ li {
   height: 24px;
 }
 
-#nav-button--prev {
+#nav-button--prev, #nav-button--next {
   position: absolute;
+}
+
+#nav-button--prev {
   left: -45px;
 }
 
 #nav-button--next {
-  position: absolute;
   right: -45px;
   transform: rotate(180deg);
 }
