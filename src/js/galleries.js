@@ -24,7 +24,7 @@ const array = [
   },
 ];
 // Wybór kontenera slajdów i funkcja generująca kod dla pojedynczego slajdu
-const wrapper = document.querySelector(".slider__slides");
+const wrapper = document.querySelector(".galleries__slides");
 const markup = (e) => `
   <img class="slide" srcset="${e.image} 1x, ${e.retina} 2x" alt="${e.alt}"/>
 `;
@@ -36,13 +36,11 @@ array.forEach((item) => {
 
 // Pobranie wszystkich slajdów oraz nawigacji i przypisanie ich do zmiennej
 const slides = document.querySelectorAll(".slide");
-const navlinks = document.querySelectorAll(".slider__navlink");
-
+const navlinks = document.querySelectorAll(".galleries__navlink");
 
 // Pobranie przycisków nawigacyjnych
 const prevButton = document.getElementById("nav-button--prev");
 const nextButton = document.getElementById("nav-button--next");
-
 
 // Inicjalizacja bieżącego slajdu
 let currentSlide = 0;
@@ -54,7 +52,7 @@ slides.forEach((slide, index) => {
 
 // Funkcja aktualizująca położenie slajdów
 const sliderImage = () => {
-  slides.forEach((slide, i) => {
+  slides.forEach((slide) => {
     slide.style.transform = `translateX(calc(-${currentSlide * 100}% - ${
       currentSlide * 100
     }px))`;
@@ -65,7 +63,14 @@ const sliderImage = () => {
 const goSlide = (slideIndex) => {
   currentSlide = slideIndex;
   sliderImage();
-  console.log(currentSlide);
+
+  currentSlide <= 0
+    ? prevButton.classList.remove("active")
+    : prevButton.classList.add("active");
+
+  currentSlide === slides.length - 1
+    ? nextButton.classList.remove("active")
+    : nextButton.classList.add("active");
 };
 
 // Nasłuchiwacz na przycisk poprzedniego slajdu
