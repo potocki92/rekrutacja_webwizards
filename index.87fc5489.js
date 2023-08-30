@@ -577,60 +577,90 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _images = require("./images");
 var _imagesDefault = parcelHelpers.interopDefault(_images);
-const wrapper = document.querySelector(".slider__slides");
-let navlinks = document.getElementsByClassName("slider__navlink");
+// Tworzenie danych dla slajdów
 const array = [
     {
-        "alt": "House",
-        "image": (0, _imagesDefault.default).image,
-        "retina": (0, _imagesDefault.default).image_retina
+        alt: "House",
+        image: (0, _imagesDefault.default).image,
+        retina: (0, _imagesDefault.default).image_retina
     },
     {
-        "alt": "Car",
-        "image": (0, _imagesDefault.default).image2,
-        "retina": (0, _imagesDefault.default).image2_retina
+        alt: "Car",
+        image: (0, _imagesDefault.default).image2,
+        retina: (0, _imagesDefault.default).image2_retina
     },
     {
-        "alt": "Shoes",
-        "image": (0, _imagesDefault.default).image3,
-        "retina": (0, _imagesDefault.default).image3_retina
+        alt: "Shoes",
+        image: (0, _imagesDefault.default).image3,
+        retina: (0, _imagesDefault.default).image3_retina
     },
     {
-        "alt": "Trees",
-        "image": (0, _imagesDefault.default).image4,
-        "retina": (0, _imagesDefault.default).image4_retina
+        alt: "Trees",
+        image: (0, _imagesDefault.default).image4,
+        retina: (0, _imagesDefault.default).image4_retina
     }
 ];
+// Wybór kontenera slajdów i funkcja generująca kod dla pojedynczego slajdu
+const wrapper = document.querySelector(".galleries__slides");
 const markup = (e)=>`
-  <img class="slide" srcset="${e.image} 1x, ${e.retina}" alt=${e.alt}/>
+  <img class="slide" srcset="${e.image} 1x, ${e.retina} 2x" alt="${e.alt}"/>
 `;
-const items = array.map((e, index)=>markup(e, index)).join("");
-wrapper.innerHTML += items;
-document.querySelectorAll(".slider__navlink").forEach(()=>{
-    let currentSlide = 0;
-    const slides = document.querySelectorAll(".slide");
-    slides.forEach((slide, index)=>{
-        slide.style.left = `calc(${index * 100}% + ${index * 100}px)`;
+// Wstawienie wygenerowanych slajdów do kontenera
+array.forEach((item)=>{
+    wrapper.innerHTML += markup(item);
+});
+// Pobranie wszystkich slajdów oraz nawigacji i przypisanie ich do zmiennej
+const slides = document.querySelectorAll(".slide");
+const navlinks = document.querySelectorAll(".galleries__navlink");
+// Pobranie przycisków nawigacyjnych
+const prevButton = document.getElementById("nav-button--prev");
+const nextButton = document.getElementById("nav-button--next");
+// Inicjalizacja bieżącego slajdu
+let currentSlide = 0;
+// Ustawienie początkowej pozycji slajdów
+slides.forEach((slide, index)=>{
+    slide.style.left = `calc(${index * 100}% + ${index * 100}px)`;
+});
+// Funkcja aktualizująca położenie slajdów
+const sliderImage = ()=>{
+    slides.forEach((slide)=>{
+        slide.style.transform = `translateX(calc(-${currentSlide * 100}% - ${currentSlide * 100}px))`;
     });
-    const goPrev = ()=>{
-        currentSlide--;
-        sliderImage();
-    };
-    const goNext = ()=>{
-        currentSlide++;
-        sliderImage();
-    };
-    document.getElementById("nav-button--prev").addEventListener("click", ()=>{
-        goPrev();
+};
+// Funkcja przesuwająca na wybrany slajd
+const goSlide = (slideIndex)=>{
+    currentSlide = slideIndex;
+    sliderImage();
+    currentSlide <= 0 ? prevButton.classList.remove("active") : prevButton.classList.add("active");
+    currentSlide === slides.length - 1 ? nextButton.classList.remove("active") : nextButton.classList.add("active");
+};
+// Nasłuchiwacz na przycisk poprzedniego slajdu
+prevButton.addEventListener("click", ()=>{
+    if (currentSlide > 0) {
+        goSlide(currentSlide - 1);
+        activeCircle(currentSlide);
+    }
+});
+// Nasłuchiwacz na przycisk następnego slajdu
+nextButton.addEventListener("click", ()=>{
+    if (currentSlide < slides.length - 1) {
+        goSlide(currentSlide + 1);
+        activeCircle(currentSlide);
+    }
+});
+// Funkcja aktywująca odpowiednią nawigację
+const activeCircle = (slide)=>{
+    navlinks.forEach((link, index)=>{
+        index === slide ? link.classList.add("active") : link.classList.remove("active");
     });
-    document.getElementById("nav-button--next").addEventListener("click", ()=>{
-        goNext();
+};
+// Nasłuchiwacze na nawigację za pomocą kropek
+navlinks.forEach((link, index)=>{
+    link.addEventListener("click", ()=>{
+        currentSlide = index;
+        goSlide(currentSlide);
+        activeCircle(index);
     });
-    const sliderImage = ()=>{
-        slides.forEach((slide)=>{
-            slide.style.transform = `translateX(-${currentSlide * 100}%)`;
-        });
-    };
 });
 
 },{"./images":"4XIGb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4XIGb":[function(require,module,exports) {

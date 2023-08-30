@@ -1,0 +1,3 @@
+!function(){let e=document.getElementsByClassName("slider__slide"),t=document.getElementsByClassName("slider__navlink"),n=0;function l(l){l>=e.length&&(l=0),l<0&&(l=e.length-1),e[n].classList.toggle("active"),t[n].classList.toggle("active"),e[l].classList.toggle("active"),t[l].classList.toggle("active"),n=l}document.getElementById("nav-button--next").addEventListener("click",()=>{l(n+1)}),document.getElementById("nav-button--prev").addEventListener("click",()=>{l(n-1)}),document.querySelectorAll(".slider__navlink").forEach((e,t)=>{e.addEventListener("click",()=>{n!==t&&l(t)})})}();//# sourceMappingURL=index.830f82f0.js.map
+
+//# sourceMappingURL=index.830f82f0.js.map
