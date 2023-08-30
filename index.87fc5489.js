@@ -666,38 +666,38 @@ navlinks.forEach((link, index)=>{
 },{"./images":"4XIGb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4XIGb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _galleries1Png = require("../assets/images/global/galleries-1.png");
-var _galleries1PngDefault = parcelHelpers.interopDefault(_galleries1Png);
-var _galleries2Png = require("../assets/images/global/galleries-2.png");
-var _galleries2PngDefault = parcelHelpers.interopDefault(_galleries2Png);
-var _galleries3Png = require("../assets/images/global/galleries-3.png");
-var _galleries3PngDefault = parcelHelpers.interopDefault(_galleries3Png);
-var _galleries4Png = require("../assets/images/global/galleries-4.png");
-var _galleries4PngDefault = parcelHelpers.interopDefault(_galleries4Png);
-var _galleries12XPng = require("../assets/images/retina/galleries-1@2x.png");
-var _galleries12XPngDefault = parcelHelpers.interopDefault(_galleries12XPng);
-var _galleries22XPng = require("../assets/images/retina/galleries-2@2x.png");
-var _galleries22XPngDefault = parcelHelpers.interopDefault(_galleries22XPng);
-var _galleries32XPng = require("../assets/images/retina/galleries-3@2x.png");
-var _galleries32XPngDefault = parcelHelpers.interopDefault(_galleries32XPng);
-var _galleries42XPng = require("../assets/images/retina/galleries-4@2x.png");
-var _galleries42XPngDefault = parcelHelpers.interopDefault(_galleries42XPng);
+var _galleries1Jpg = require("../assets/images/global/galleries-1.jpg");
+var _galleries1JpgDefault = parcelHelpers.interopDefault(_galleries1Jpg);
+var _galleries2Jpg = require("../assets/images/global/galleries-2.jpg");
+var _galleries2JpgDefault = parcelHelpers.interopDefault(_galleries2Jpg);
+var _galleries3Jpg = require("../assets/images/global/galleries-3.jpg");
+var _galleries3JpgDefault = parcelHelpers.interopDefault(_galleries3Jpg);
+var _galleries4Jpg = require("../assets/images/global/galleries-4.jpg");
+var _galleries4JpgDefault = parcelHelpers.interopDefault(_galleries4Jpg);
+var _galleries12XJpg = require("../assets/images/retina/galleries-1@2x.jpg");
+var _galleries12XJpgDefault = parcelHelpers.interopDefault(_galleries12XJpg);
+var _galleries22XJpg = require("../assets/images/retina/galleries-2@2x.jpg");
+var _galleries22XJpgDefault = parcelHelpers.interopDefault(_galleries22XJpg);
+var _galleries32XJpg = require("../assets/images/retina/galleries-3@2x.jpg");
+var _galleries32XJpgDefault = parcelHelpers.interopDefault(_galleries32XJpg);
+var _galleries42XJpg = require("../assets/images/retina/galleries-4@2x.jpg");
+var _galleries42XJpgDefault = parcelHelpers.interopDefault(_galleries42XJpg);
 const images = {
-    image: (0, _galleries1PngDefault.default),
-    image2: (0, _galleries2PngDefault.default),
-    image3: (0, _galleries3PngDefault.default),
-    image4: (0, _galleries4PngDefault.default),
-    image_retina: (0, _galleries12XPngDefault.default),
-    image2_retina: (0, _galleries22XPngDefault.default),
-    image3_retina: (0, _galleries32XPngDefault.default),
-    image4_retina: (0, _galleries42XPngDefault.default)
+    image: (0, _galleries1JpgDefault.default),
+    image2: (0, _galleries2JpgDefault.default),
+    image3: (0, _galleries3JpgDefault.default),
+    image4: (0, _galleries4JpgDefault.default),
+    image_retina: (0, _galleries12XJpgDefault.default),
+    image2_retina: (0, _galleries22XJpgDefault.default),
+    image3_retina: (0, _galleries32XJpgDefault.default),
+    image4_retina: (0, _galleries42XJpgDefault.default)
 };
 exports.default = images;
 
-},{"../assets/images/global/galleries-1.png":"8D1Rb","../assets/images/global/galleries-2.png":"i1YN7","../assets/images/global/galleries-3.png":"6RtEw","../assets/images/global/galleries-4.png":"bEjl9","../assets/images/retina/galleries-1@2x.png":"j4rUl","../assets/images/retina/galleries-2@2x.png":"ax71i","../assets/images/retina/galleries-3@2x.png":"efi1p","../assets/images/retina/galleries-4@2x.png":"4qkH8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8D1Rb":[function(require,module,exports) {
-module.exports = require("6edcf88cda598f61").getBundleURL("lQ1xZ") + "galleries-1.df2b1dab.png" + "?" + Date.now();
+},{"../assets/images/global/galleries-1.jpg":"7kPUX","../assets/images/global/galleries-2.jpg":"k9bH7","../assets/images/global/galleries-3.jpg":"aq9yr","../assets/images/global/galleries-4.jpg":"lrPdG","../assets/images/retina/galleries-1@2x.jpg":"XZMTZ","../assets/images/retina/galleries-2@2x.jpg":"ld6xd","../assets/images/retina/galleries-3@2x.jpg":"6D57f","../assets/images/retina/galleries-4@2x.jpg":"60Fxn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7kPUX":[function(require,module,exports) {
+module.exports = require("28684917e75a7f31").getBundleURL("lQ1xZ") + "galleries-1.6c8852a8.jpg" + "?" + Date.now();
 
-},{"6edcf88cda598f61":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+},{"28684917e75a7f31":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {
@@ -732,28 +732,28 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"i1YN7":[function(require,module,exports) {
-module.exports = require("ccf2ee63212ca00d").getBundleURL("lQ1xZ") + "galleries-2.6f3f7865.png" + "?" + Date.now();
+},{}],"k9bH7":[function(require,module,exports) {
+module.exports = require("6303371ac4fa4d20").getBundleURL("lQ1xZ") + "galleries-2.a06bf0fe.jpg" + "?" + Date.now();
 
-},{"ccf2ee63212ca00d":"lgJ39"}],"6RtEw":[function(require,module,exports) {
-module.exports = require("8b9972e8cc6f90b4").getBundleURL("lQ1xZ") + "galleries-3.ad436601.png" + "?" + Date.now();
+},{"6303371ac4fa4d20":"lgJ39"}],"aq9yr":[function(require,module,exports) {
+module.exports = require("f9ecad748012ded4").getBundleURL("lQ1xZ") + "galleries-3.ecdab938.jpg" + "?" + Date.now();
 
-},{"8b9972e8cc6f90b4":"lgJ39"}],"bEjl9":[function(require,module,exports) {
-module.exports = require("32fb2a5cb56c9d00").getBundleURL("lQ1xZ") + "galleries-4.7261b63d.png" + "?" + Date.now();
+},{"f9ecad748012ded4":"lgJ39"}],"lrPdG":[function(require,module,exports) {
+module.exports = require("1527a1676b2dee04").getBundleURL("lQ1xZ") + "galleries-4.3c7221a5.jpg" + "?" + Date.now();
 
-},{"32fb2a5cb56c9d00":"lgJ39"}],"j4rUl":[function(require,module,exports) {
-module.exports = require("1660f0da8852bad").getBundleURL("lQ1xZ") + "galleries-1@2x.7af94bb0.png" + "?" + Date.now();
+},{"1527a1676b2dee04":"lgJ39"}],"XZMTZ":[function(require,module,exports) {
+module.exports = require("b94cc941b139135d").getBundleURL("lQ1xZ") + "galleries-1@2x.a643af00.jpg" + "?" + Date.now();
 
-},{"1660f0da8852bad":"lgJ39"}],"ax71i":[function(require,module,exports) {
-module.exports = require("e26f671b9fb170f").getBundleURL("lQ1xZ") + "galleries-2@2x.55cbce07.png" + "?" + Date.now();
+},{"b94cc941b139135d":"lgJ39"}],"ld6xd":[function(require,module,exports) {
+module.exports = require("10aa9affb56ae54f").getBundleURL("lQ1xZ") + "galleries-2@2x.8d95664b.jpg" + "?" + Date.now();
 
-},{"e26f671b9fb170f":"lgJ39"}],"efi1p":[function(require,module,exports) {
-module.exports = require("f96fa6a229118c3").getBundleURL("lQ1xZ") + "galleries-3@2x.5796c094.png" + "?" + Date.now();
+},{"10aa9affb56ae54f":"lgJ39"}],"6D57f":[function(require,module,exports) {
+module.exports = require("ecf669f4bdcd6ae5").getBundleURL("lQ1xZ") + "galleries-3@2x.a2047698.jpg" + "?" + Date.now();
 
-},{"f96fa6a229118c3":"lgJ39"}],"4qkH8":[function(require,module,exports) {
-module.exports = require("e196969f6a69e360").getBundleURL("lQ1xZ") + "galleries-4@2x.84419e42.png" + "?" + Date.now();
+},{"ecf669f4bdcd6ae5":"lgJ39"}],"60Fxn":[function(require,module,exports) {
+module.exports = require("cfcd71d6767541a8").getBundleURL("lQ1xZ") + "galleries-4@2x.11cebd95.jpg" + "?" + Date.now();
 
-},{"e196969f6a69e360":"lgJ39"}],"gkKU3":[function(require,module,exports) {
+},{"cfcd71d6767541a8":"lgJ39"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a

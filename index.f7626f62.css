@@ -261,7 +261,7 @@ li {
 .hero {
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  background-image: url("hero.07119883.png");
+  background-image: url("hero.830af9d0.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -272,13 +272,13 @@ li {
 
 @media only screen and (-webkit-device-pixel-ratio >= 2), only screen and (-moz-device-pixel-ratio >= 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (resolution >= 192dpi), only screen and (resolution >= 2dppx) {
   .hero {
-    background-image: url("hero@2x.26ca2a98.png");
+    background-image: url("hero@2x.123a3401.jpg");
   }
 }
 
 @supports (-webkit-touch-callout: none) {
   .hero {
-    background-image: url("hero@2x.26ca2a98.png");
+    background-image: url("hero@2x.123a3401.jpg");
   }
 }
 
@@ -302,7 +302,7 @@ li {
 }
 
 .about__image {
-  background-image: url("about.ba3ee5ca.png");
+  background-image: url("about.eb434ffc.jpg");
   background-position: bottom;
   background-size: cover;
   width: 100%;
@@ -311,7 +311,7 @@ li {
 
 @media only screen and (-webkit-device-pixel-ratio >= 2), only screen and (-moz-device-pixel-ratio >= 2), only screen and (-o-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2), only screen and (resolution >= 192dpi), only screen and (resolution >= 2dppx) {
   .about__image {
-    background-image: url("about@2x.3d8c123f.png");
+    background-image: url("about@2x.b0961fc3.jpg");
   }
 }
 
