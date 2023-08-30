@@ -574,32 +574,36 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"aHHgN":[function(require,module,exports) {
-(()=>{
-    const backdrop = document.getElementById("backdrop");
-    const header = document.getElementById("header");
-    const nav = document.querySelector(".nav");
-    const burger = document.getElementById("menu-toggle");
-    const check = document.getElementById("check");
-    const checkSvg = document.getElementById("check__svg");
-    // open the mobile menu
-    const openButton = document.getElementById("contact");
-    const closeButton = document.getElementById("close");
-    // to add / remove class 'is-hidden'
-    const mobileMenu = document.querySelector(".modal");
-    // click and open mobile menu
-    openButton.addEventListener("click", toggleModal);
-    closeButton.addEventListener("click", toggleModal);
-    // function to add 'is-hidden' class to mobile
-    function toggleModal() {
-        backdrop.classList.toggle("is-hidden");
-        burger.classList.remove("active");
-        header.classList.remove("show");
-        nav.classList.remove("show");
-    }
-    check.addEventListener("click", ()=>{
-        checkSvg.classList.toggle("check");
-    });
-})();
+const backdrop = document.getElementById("backdrop"); // Tło modalne
+const header = document.getElementById("header"); // Nagłówek strony
+const nav = document.querySelector(".nav"); // Kontener nawigacji
+const burger = document.getElementById("menu-toggle"); // Przycisk burgera
+const check = document.getElementById("check"); // Checkbox
+const checkSvg = document.getElementById("check__svg"); // SVG checkboxa
+const openButton = document.getElementById("contact"); // Przycisk otwierający modal
+const closeButton = document.getElementById("close"); // Przycisk zamykający modal
+// Nasłuchujemy zdarzenia kliknięcia na przycisku otwierającym i zamykającym modal
+openButton.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+// Nasłuchiwanie na zdarzenie naciśnięcia klawisza
+document.addEventListener("keydown", (event)=>{
+    if (event.key === "Escape" || event.key === "Esc") closeIfOpen();
+});
+// Funkcja do przełączania widoczności modalu i ukrywania menu
+function toggleModal() {
+    backdrop.classList.toggle("is-hidden");
+    burger.classList.remove("active");
+    header.classList.remove("show");
+    nav.classList.remove("show");
+}
+// Funkcja do zamknięcia modalu tylko wtedy, gdy jest otwarty
+function closeIfOpen() {
+    if (!backdrop.classList.contains("is-hidden")) toggleModal();
+}
+// Nasłuchujemy zdarzenia kliknięcia na checkboxie i dodajemy/usuwamy klasę "check" dla SVG checkboxa
+check.addEventListener("click", ()=>{
+    checkSvg.classList.toggle("check");
+});
 
 },{}]},["l4lgd","aHHgN"], "aHHgN", "parcelRequire3b0f")
 
