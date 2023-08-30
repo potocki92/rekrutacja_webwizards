@@ -273,6 +273,12 @@ li {
   }
 }
 
+@supports (-webkit-touch-callout: none) {
+  .hero {
+    background-image: url("hero@2x.26ca2a98.png");
+  }
+}
+
 .about {
   flex-wrap: wrap;
   gap: 74px;
@@ -381,13 +387,19 @@ li {
 }
 
 .galleries__slides {
-  width: 80%;
+  width: 100%;
   max-width: 1364px;
   height: 600px;
   max-height: 767px;
   margin: 100px auto auto;
   display: flex;
   position: relative;
+}
+
+.galleries__slides img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .galleries__buttons {
