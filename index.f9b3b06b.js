@@ -582,6 +582,7 @@ const check = document.getElementById("check"); // Checkbox
 const checkSvg = document.getElementById("check__svg"); // SVG checkboxa
 const openButton = document.getElementById("contact"); // Przycisk otwierający modal
 const closeButton = document.getElementById("close"); // Przycisk zamykający modal
+const errorMessage = document.querySelector("#errorMessage"); // Element wyświetlający komunikat o błędzie
 // Nasłuchujemy zdarzenia kliknięcia na przycisku otwierającym i zamykającym modal
 openButton.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
@@ -595,6 +596,7 @@ function toggleModal() {
     burger.classList.remove("active");
     header.classList.remove("show");
     nav.classList.remove("show");
+    errorMessage.style.visibility = "hidden";
 }
 // Funkcja do zamknięcia modalu tylko wtedy, gdy jest otwarty
 function closeIfOpen() {

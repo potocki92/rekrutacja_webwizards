@@ -247,6 +247,15 @@ li {
   padding: 14px 30px;
 }
 
+.nav__link--social {
+  color: #afafaf;
+  transition: color .3s;
+}
+
+.nav__link--social:hover {
+  color: #ff4359;
+}
+
 .nav__link:hover {
   border-radius: 21px;
   box-shadow: 0 5px 10px #fc435933;
@@ -500,9 +509,14 @@ li {
 
 .modal__close {
   cursor: pointer;
+  color: #afafaf;
   position: absolute;
   top: 20px;
   right: 20px;
+}
+
+.modal__close:hover {
+  color: #ff4359;
 }
 
 .modal__wrapper {
