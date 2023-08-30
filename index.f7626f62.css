@@ -282,6 +282,12 @@ li {
   }
 }
 
+@media only screen and (device-width <= 1366px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
 .about {
   flex-wrap: wrap;
   gap: 74px;
