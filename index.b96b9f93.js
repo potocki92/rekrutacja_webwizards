@@ -1,3 +1,0 @@
-const e=document.querySelector(".modal__form");document.querySelector("#submitButton");const t=document.querySelector("#errorMessage");e.addEventListener("submit",function(e){e.preventDefault();let l=document.querySelector("#name").value,o=document.querySelector("#surname").value,u=document.querySelector("#email").value,c=document.querySelector("#checkbox").checked;if(l&&o&&u&&c){t.style.visibility="hidden";let e=JSON.stringify({name:l,surname:o,email:u,accept:c},null,2);console.log(e)}else t.style.visibility="visible"});//# sourceMappingURL=index.b96b9f93.js.map
-
-//# sourceMappingURL=index.b96b9f93.js.map
