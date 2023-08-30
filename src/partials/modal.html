@@ -1,0 +1,48 @@
+<div id="modal" class="modal">
+  <svg id="close" class="modal__close" width="24" height="24">
+    <use href="./assets/svg/icons.svg#close"></use>
+  </svg>
+  <form class="modal__form">
+    <div class="modal__wrapper">
+      <label class="modal__label">IMIĘ<span class="modal__span">*</span></label>
+      <input class="modal__input" placeholder="- wpisz -" />
+    </div>
+    <div class="modal__wrapper">
+      <label class="modal__label">IMIĘ<span class="modal__span">*</span></label>
+      <input class="modal__input" placeholder="- wpisz -" />
+    </div>
+    <div class="modal__wrapper">
+      <label class="modal__label">IMIĘ<span class="modal__span">*</span></label>
+      <input class="modal__input" placeholder="- wpisz -" />
+    </div>
+    <div class="modal__wrapper modal__wrapper--required">
+      <span class="modal__span">*</span>
+      <p class="modal__text">- pola wymagane</p>
+    </div>
+    <div class="modal__wrapper modal__wrapper--check">
+      <input
+        class="custom-checkbox modal__checkbox"
+        type="checkbox"
+        id="checkbox"
+      />
+      <label id="check" class="checkbox__label label__checked" for="checkbox">
+        <svg id="check__svg" class="checkbox__svg" width="9.95" height="7.726">
+          <use
+            class="checkbox__before"
+            href="./assets/svg/icons.svg#check"
+          ></use>
+        </svg>
+      </label>
+      <p class="modal__text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+    </div>
+    <button class="modal__button" type="submit">WYŚLIJ</button>
+    <span class="modal__span modal__span--under"
+      >Proszę uzupełnić wymagane pola!</span
+    >
+  </form>
+</div>

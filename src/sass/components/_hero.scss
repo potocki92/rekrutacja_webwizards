@@ -12,5 +12,13 @@
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
   background-size: cover;
+  position: -webkit-sticky;
+  /* Ustawienie dla przeglądarek WebKit (Safari) */
+  @supports (-webkit-touch-callout: none) {
+    background-image: url("../assets/images/retina/hero@2x.png");
+  }
 }
