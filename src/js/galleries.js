@@ -1,3 +1,4 @@
+import _throttle from 'lodash/throttle';
 import images from "./images";
 
 // Tworzenie danych dla slajdów
@@ -26,7 +27,7 @@ const array = [
 // Wybór kontenera slajdów i funkcja generująca kod dla pojedynczego slajdu
 const wrapper = document.querySelector(".galleries__slides");
 const markup = (e) => `
-  <img class="slide" srcset="${e.image} 1x, ${e.retina} 2x" alt="${e.alt}"/>
+  <img class="slide" loading="lazy" srcset="${e.image} 1x, ${e.retina} 2x" alt="${e.alt}"/>
 `;
 
 // Wstawienie wygenerowanych slajdów do kontenera
@@ -65,7 +66,7 @@ const sliderImage = () => {
 };
 
 // Funkcja przesuwająca na wybrany slajd
-export const goSlide = (slideIndex) => {
+const goSlide = (slideIndex) => {
   currentSlide = slideIndex;
   sliderImage();
 
@@ -95,7 +96,7 @@ nextButton.addEventListener("click", () => {
 });
 
 // Funkcja aktywująca odpowiednią nawigację
-export const activeCircle = (slide) => {
+const activeCircle = (slide) => {
   navlinks.forEach((link, index) => {
     index === slide
       ? link.classList.add("active")
