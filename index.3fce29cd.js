@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"6mfE5":[function(require,module,exports) {
+})({"7js1C":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "fe5fa79187fc5489";
+module.bundle.HMR_BUNDLE_ID = "f9d75b713fce29cd";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,245 +573,39 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"3e3p0":[function(require,module,exports) {
+},{}],"5Uqvn":[function(require,module,exports) {
+// Dodajemy zmienną do przechowywania pozycji dotknięcia
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "goSlide", ()=>goSlide);
-parcelHelpers.export(exports, "activeCircle", ()=>activeCircle);
-var _images = require("./images");
-var _imagesDefault = parcelHelpers.interopDefault(_images);
-// Tworzenie danych dla slajdów
-const array = [
-    {
-        alt: "House",
-        image: (0, _imagesDefault.default).image,
-        retina: (0, _imagesDefault.default).image_retina
-    },
-    {
-        alt: "Car",
-        image: (0, _imagesDefault.default).image2,
-        retina: (0, _imagesDefault.default).image2_retina
-    },
-    {
-        alt: "Shoes",
-        image: (0, _imagesDefault.default).image3,
-        retina: (0, _imagesDefault.default).image3_retina
-    },
-    {
-        alt: "Trees",
-        image: (0, _imagesDefault.default).image4,
-        retina: (0, _imagesDefault.default).image4_retina
-    }
-];
-// Wybór kontenera slajdów i funkcja generująca kod dla pojedynczego slajdu
-const wrapper = document.querySelector(".galleries__slides");
-const markup = (e)=>`
-  <img class="slide" srcset="${e.image} 1x, ${e.retina} 2x" alt="${e.alt}"/>
-`;
-// Wstawienie wygenerowanych slajdów do kontenera
-array.forEach((item)=>{
-    wrapper.innerHTML += markup(item);
-});
-// Pobranie wszystkich slajdów oraz nawigacji i przypisanie ich do zmiennej
-const slides = document.querySelectorAll(".slide");
-const navlinks = document.querySelectorAll(".galleries__navlink");
-// Pobranie przycisków nawigacyjnych
-const prevButton = document.getElementById("nav-button--prev");
-const nextButton = document.getElementById("nav-button--next");
-// Inicjalizacja bieżącego slajdu
-let currentSlide = 0;
-// Ustawienie początkowej pozycji slajdów
-slides.forEach((slide, index)=>{
-    slide.style.left = `calc(${index * 100}% + ${index * 100}px)`;
-    if (index !== currentSlide) slide.style.opacity = 0.2; // Ustawienie opacity dla pierwszego slajdu
-});
-// Funkcja aktualizująca położenie slajdów
-const sliderImage = ()=>{
-    slides.forEach((slide, index)=>{
-        index === currentSlide ? slide.style.opacity = 1 : slide.style.opacity = 0.2; // Ustawiamy opacity dla slajdu
-        slide.style.transform = `translateX(calc(-${currentSlide * 100}% - ${currentSlide * 100}px))`;
-    });
-};
-const goSlide = (slideIndex)=>{
-    currentSlide = slideIndex;
-    sliderImage();
-    currentSlide <= 0 ? prevButton.classList.remove("active") : prevButton.classList.add("active");
-    currentSlide === slides.length - 1 ? nextButton.classList.remove("active") : nextButton.classList.add("active");
-};
-// Nasłuchiwacz na przycisk poprzedniego slajdu
-prevButton.addEventListener("click", ()=>{
-    if (currentSlide > 0) {
-        goSlide(currentSlide - 1);
-        activeCircle(currentSlide);
-    }
-});
-// Nasłuchiwacz na przycisk następnego slajdu
-nextButton.addEventListener("click", ()=>{
-    if (currentSlide < slides.length - 1) {
-        goSlide(currentSlide + 1);
-        activeCircle(currentSlide);
-    }
-});
-const activeCircle = (slide)=>{
-    navlinks.forEach((link, index)=>{
-        index === slide ? link.classList.add("active") : link.classList.remove("active");
-    });
-};
-// Nasłuchiwacze na nawigację za pomocą kropek
-navlinks.forEach((link, index)=>{
-    link.addEventListener("click", ()=>{
-        currentSlide = index;
-        goSlide(currentSlide);
-        activeCircle(index);
-    });
-});
-// Dodajemy zmienną do przechowywania pozycji dotknięcia
+parcelHelpers.export(exports, "touchedSlider", ()=>touchedSlider);
 let touchStartX = 0;
 let touchEndX = 0;
-wrapper.addEventListener("touchstart", (event)=>{
-    touchStartX = event.touches[0].clientX;
-});
-wrapper.addEventListener("touchmove", (event)=>{
-    touchEndX = event.touches[0].clientX;
-});
-wrapper.addEventListener("touchend", ()=>{
-    const touchDistance = touchEndX - touchStartX;
-    const threshold = 50; // Minimalny dystans przesunięcia, aby uznać za przewinięcie
-    if (touchDistance > threshold) // Przesunięcie w prawo - idź do poprzedniego slajdu
-    {
-        if (currentSlide > 0) {
-            goSlide(currentSlide - 1);
-            activeCircle(currentSlide);
-        }
-    } else if (touchDistance < -threshold) // Przesunięcie w lewo - idź do następnego slajdu
-    {
-        if (currentSlide < slides.length - 1) {
-            goSlide(currentSlide + 1);
-            activeCircle(currentSlide);
-        }
-    }
-});
-
-},{"./images":"4XIGb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4XIGb":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _galleries1Jpg = require("../assets/images/global/galleries-1.jpg");
-var _galleries1JpgDefault = parcelHelpers.interopDefault(_galleries1Jpg);
-var _galleries2Jpg = require("../assets/images/global/galleries-2.jpg");
-var _galleries2JpgDefault = parcelHelpers.interopDefault(_galleries2Jpg);
-var _galleries3Jpg = require("../assets/images/global/galleries-3.jpg");
-var _galleries3JpgDefault = parcelHelpers.interopDefault(_galleries3Jpg);
-var _galleries4Jpg = require("../assets/images/global/galleries-4.jpg");
-var _galleries4JpgDefault = parcelHelpers.interopDefault(_galleries4Jpg);
-var _galleries12XJpg = require("../assets/images/retina/galleries-1@2x.jpg");
-var _galleries12XJpgDefault = parcelHelpers.interopDefault(_galleries12XJpg);
-var _galleries22XJpg = require("../assets/images/retina/galleries-2@2x.jpg");
-var _galleries22XJpgDefault = parcelHelpers.interopDefault(_galleries22XJpg);
-var _galleries32XJpg = require("../assets/images/retina/galleries-3@2x.jpg");
-var _galleries32XJpgDefault = parcelHelpers.interopDefault(_galleries32XJpg);
-var _galleries42XJpg = require("../assets/images/retina/galleries-4@2x.jpg");
-var _galleries42XJpgDefault = parcelHelpers.interopDefault(_galleries42XJpg);
-const images = {
-    image: (0, _galleries1JpgDefault.default),
-    image2: (0, _galleries2JpgDefault.default),
-    image3: (0, _galleries3JpgDefault.default),
-    image4: (0, _galleries4JpgDefault.default),
-    image_retina: (0, _galleries12XJpgDefault.default),
-    image2_retina: (0, _galleries22XJpgDefault.default),
-    image3_retina: (0, _galleries32XJpgDefault.default),
-    image4_retina: (0, _galleries42XJpgDefault.default)
-};
-exports.default = images;
-
-},{"../assets/images/global/galleries-1.jpg":"7kPUX","../assets/images/global/galleries-2.jpg":"k9bH7","../assets/images/global/galleries-3.jpg":"aq9yr","../assets/images/global/galleries-4.jpg":"lrPdG","../assets/images/retina/galleries-1@2x.jpg":"XZMTZ","../assets/images/retina/galleries-2@2x.jpg":"ld6xd","../assets/images/retina/galleries-3@2x.jpg":"6D57f","../assets/images/retina/galleries-4@2x.jpg":"60Fxn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7kPUX":[function(require,module,exports) {
-module.exports = require("28684917e75a7f31").getBundleURL("lQ1xZ") + "galleries-1.6c8852a8.jpg" + "?" + Date.now();
-
-},{"28684917e75a7f31":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"k9bH7":[function(require,module,exports) {
-module.exports = require("6303371ac4fa4d20").getBundleURL("lQ1xZ") + "galleries-2.a06bf0fe.jpg" + "?" + Date.now();
-
-},{"6303371ac4fa4d20":"lgJ39"}],"aq9yr":[function(require,module,exports) {
-module.exports = require("f9ecad748012ded4").getBundleURL("lQ1xZ") + "galleries-3.ecdab938.jpg" + "?" + Date.now();
-
-},{"f9ecad748012ded4":"lgJ39"}],"lrPdG":[function(require,module,exports) {
-module.exports = require("1527a1676b2dee04").getBundleURL("lQ1xZ") + "galleries-4.3c7221a5.jpg" + "?" + Date.now();
-
-},{"1527a1676b2dee04":"lgJ39"}],"XZMTZ":[function(require,module,exports) {
-module.exports = require("b94cc941b139135d").getBundleURL("lQ1xZ") + "galleries-1@2x.a643af00.jpg" + "?" + Date.now();
-
-},{"b94cc941b139135d":"lgJ39"}],"ld6xd":[function(require,module,exports) {
-module.exports = require("10aa9affb56ae54f").getBundleURL("lQ1xZ") + "galleries-2@2x.8d95664b.jpg" + "?" + Date.now();
-
-},{"10aa9affb56ae54f":"lgJ39"}],"6D57f":[function(require,module,exports) {
-module.exports = require("ecf669f4bdcd6ae5").getBundleURL("lQ1xZ") + "galleries-3@2x.a2047698.jpg" + "?" + Date.now();
-
-},{"ecf669f4bdcd6ae5":"lgJ39"}],"60Fxn":[function(require,module,exports) {
-module.exports = require("cfcd71d6767541a8").getBundleURL("lQ1xZ") + "galleries-4@2x.11cebd95.jpg" + "?" + Date.now();
-
-},{"cfcd71d6767541a8":"lgJ39"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
+const touchedSlider = (activeCircle, goSlide, wrapper, currentSlide, slides)=>{
+    wrapper.addEventListener("touchstart", (event)=>{
+        touchStartX = event.touches[0].clientX;
     });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
+    wrapper.addEventListener("touchmove", (event)=>{
+        touchEndX = event.touches[0].clientX;
+    });
+    wrapper.addEventListener("touchend", ()=>{
+        const touchDistance = touchEndX - touchStartX;
+        const threshold = 50; // Minimalny dystans przesunięcia, aby uznać za przewinięcie
+        if (touchDistance > threshold) // Przesunięcie w prawo - idź do poprzedniego slajdu
+        {
+            if (currentSlide > 0) {
+                goSlide(currentSlide - 1);
+                activeCircle(currentSlide);
             }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
+        } else if (touchDistance < -threshold) // Przesunięcie w lewo - idź do następnego slajdu
+        {
+            if (currentSlide < slides.length - 1) {
+                goSlide(currentSlide + 1);
+                activeCircle(currentSlide);
+            }
+        }
     });
 };
 
-},{}]},["6mfE5","3e3p0"], "3e3p0", "parcelRequire3b0f")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7js1C","5Uqvn"], "5Uqvn", "parcelRequire3b0f")
 
-//# sourceMappingURL=index.87fc5489.js.map
+//# sourceMappingURL=index.3fce29cd.js.map
