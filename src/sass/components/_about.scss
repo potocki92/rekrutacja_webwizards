@@ -17,9 +17,9 @@
       only screen and (min-device-pixel-ratio: 2),
       only screen and (min-resolution: 192dpi),
       only screen and (min-resolution: 2dppx) {
-      background-image: url("../assets/images/retina/about@2x.png");
+      background-image: url("../assets/images/retina/about@2x.jpg");
     }
-    background-image: url("../assets/images/global/about.png");
+    background-image: url("../assets/images/global/about.jpg");
     background-size: cover;
     background-position: bottom;
 
@@ -46,7 +46,7 @@
     text-align: left;
     font: normal normal 300 14px/22px Montserrat;
     letter-spacing: 0px;
-    color: #000000;
+    color: map-get($map: $color, $key: "black");
     margin-bottom: 1em;
 
     br {

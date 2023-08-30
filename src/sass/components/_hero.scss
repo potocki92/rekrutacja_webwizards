@@ -6,9 +6,9 @@
     only screen and (min-device-pixel-ratio: 2),
     only screen and (min-resolution: 192dpi),
     only screen and (min-resolution: 2dppx) {
-    background-image: url("../assets/images/retina/hero@2x.png");
+    background-image: url("../assets/images/retina/hero@2x.jpg");
   }
-  background-image: url("../assets/images/global/hero.png");
+  background-image: url("../assets/images/global/hero.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,6 +19,11 @@
   position: -webkit-sticky;
   /* Ustawienie dla przeglądarek WebKit (Safari) */
   @supports (-webkit-touch-callout: none) {
-    background-image: url("../assets/images/retina/hero@2x.png");
+    background-image: url("../assets/images/retina/hero@2x.jpg");
+  }
+
+  @media only screen and (max-device-width: 1366px) {
+      background-attachment: scroll;
+
   }
 }

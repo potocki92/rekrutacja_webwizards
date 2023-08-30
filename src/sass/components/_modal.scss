@@ -14,8 +14,8 @@
   width: 90%;
   max-width: 536px;
   height: 545px;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 0px 99px #ff4359;
+  background: map-get($map: $color, $key: "white") 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 99px map-get($map: $color, $key: "red");
   border-radius: 33px;
   position: fixed;
   top: 50%;
@@ -31,6 +31,11 @@
     top: 20px;
     right: 20px;
     cursor: pointer;
+    color: map-get($map: $color, $key: "gray");
+
+    &:hover {
+      color: map-get($map: $color, $key: "red");
+    }
   }
   &__wrapper {
     display: flex;
@@ -88,7 +93,7 @@
     text-align: left;
     font: normal normal 300 12px/14px Montserrat;
     letter-spacing: 4.8px;
-    color: #afafaf;
+    color: map-get($map: $color, $key: "gray");
   }
 
   &__button {
@@ -98,7 +103,7 @@
     text-align: center;
     font: normal normal 300 16px/14px Montserrat;
     letter-spacing: 0px;
-    color: #ffffff;
+    color: map-get($map: $color, $key: "white");
     border-color: transparent;
     padding: 11px 0;
   }
@@ -111,8 +116,8 @@
       cursor: pointer;
       width: 80px;
       height: 20px;
-      background: #ffffff 0% 0% no-repeat padding-box;
-      border: 1px solid #afafaf;
+      background: map-get($map: $color, $key: "white") 0% 0% no-repeat padding-box;
+      border: 1px solid map-get($map: $color, $key: "gray");
       border-radius: 6px;
 
       display: flex;
